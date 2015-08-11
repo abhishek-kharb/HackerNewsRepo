@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'HackerNewsFinal' do
-pod 'Google/Analytics', '~> 1.0.0'
+pod 'Mixpanel'
 end
 
 target 'HackerNewsFinalTests' do
