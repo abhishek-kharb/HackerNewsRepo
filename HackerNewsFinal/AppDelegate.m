@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import "TableViewController.h"
 #import <sys/utsname.h>
+#import "Mixpanel.h"
 
-
-#define kAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+#define MIXPANEL_TOKEN @"c03ebec0562f14e4adf2654048d313e0"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) TableViewController *tableViewController;
@@ -36,6 +36,13 @@
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     NSString *deviceName = [self platformType:platform];
     
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel identify:@"1"];
+    [mixpanel registerSuperProperties:@{
+                                        @"Device Info" : deviceName,
+                                        @"Device OS"   : deviceOS
+                                        }];
     
     return YES;
 }

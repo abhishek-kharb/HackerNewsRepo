@@ -7,13 +7,15 @@
 //
 
 #import "DetailedViewController.h"
-#import "Flurry.h"
+#import "Mixpanel.h"
+
 
 @interface DetailedViewController ()
 @property (strong, nonatomic)  UIWebView *myWebView;
 @property(strong, nonatomic) UIActivityIndicatorView *mySpinner;
 @property (strong, nonatomic) NSURL *myURl;
 @property (strong, nonatomic) NSURLRequest *myRequest;
+@property (strong, nonatomic) Mixpanel *mixpanel;
 @end
 
 @implementation DetailedViewController
@@ -24,6 +26,8 @@
     self.mySpinner.color = [UIColor blackColor];
     UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(onBackButtonClick)];
     self.navigationItem.leftBarButtonItem = myBackButton;
+    self.mixpanel = [Mixpanel sharedInstance];
+    [self.mixpanel timeEvent:@"Viewed A Story!"];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -37,12 +41,11 @@
     self.myWebView.scalesPageToFit = YES;
     [self.myWebView loadRequest:self.myRequest];
     self.myWebView.delegate = self;
-    [Flurry logEvent:@"Story Visited Average Time" timed:YES];
 
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
-    [Flurry endTimedEvent:@"Story Visited Average Time" withParameters:nil];
+    [self.mixpanel track:@"Viewed A Story!"];
 }
 
 -(void) webViewDidStartLoad:(UIWebView *)webView{

@@ -11,6 +11,8 @@
 #import "StoryItem.h"
 #import "DetailedViewController.h"
 #import "AppDelegate.h"
+#import "MixPanel.h"
+
 
 @interface TableViewController ()
 @property (strong, nonatomic) WebContentFetchController *webContentFetchController;
@@ -19,6 +21,7 @@
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) UIActivityIndicatorView *footerSpinner;
 @property (strong, nonatomic) DetailedViewController *detailedViewController;
+@property (strong, nonatomic) Mixpanel *mixpanel;
 @end
 
 @implementation TableViewController
@@ -50,6 +53,8 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
     self.webContentFetchController = [[WebContentFetchController alloc] init];
     self.webContentFetchController.delegate = self;
     [self.webContentFetchController initiateItemIdFetch];
+    
+    self.mixpanel = [Mixpanel sharedInstance];
 
 }
 
@@ -73,7 +78,7 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
 
 -(void) onRefreshButtonClick{
     
-    
+    [self.mixpanel track:@"Refresh Button Clicked"];
     self.allStoryTempData = nil;
     self.allStoryTempData = [[NSMutableArray alloc] initWithArray:self.allStoryData];
     self.allStoryData = nil;
@@ -102,6 +107,7 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
         
         if (indexPath.row == self.allStoryData.count-1) {
             
+            [self.mixpanel track:@"Over 20 stories scrolled"];
             [self.footerSpinner startAnimating];
             long count = self.allStoryData.count;
             self.allStoryTempData = nil;
@@ -118,6 +124,7 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
 
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.mixpanel track:@"Did Select A Story" properties:@{@"Index" : [NSNumber numberWithInteger:indexPath.row]}];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     StoryItem *storyItem;
     storyItem = [self.allStoryData objectAtIndex:indexPath.row];
