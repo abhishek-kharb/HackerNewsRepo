@@ -21,7 +21,6 @@
 		34A7DDF71B5F9587004C628C /* StoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A7DDF61B5F9587004C628C /* StoryItem.m */; };
 		34A7DDFB1B60CBA1004C628C /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A7DDF91B60CBA1004C628C /* DetailedViewController.m */; };
 		34A7DDFC1B60CBA1004C628C /* DetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A7DDFA1B60CBA1004C628C /* DetailedViewController.xib */; };
-		34C936CA1B78AF0A0004F806 /* libFlurry_6.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB875B1B74BD150011FC14 /* libFlurry_6.7.0.a */; };
 		34FB875E1B74BE070011FC14 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB875D1B74BE070011FC14 /* SystemConfiguration.framework */; };
 		34FB87601B74BE180011FC14 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB875F1B74BE180011FC14 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -63,9 +62,6 @@
 		34A7DDF81B60CBA1004C628C /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
 		34A7DDF91B60CBA1004C628C /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 		34A7DDFA1B60CBA1004C628C /* DetailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedViewController.xib; sourceTree = "<group>"; };
-		34C936C51B78ABF10004F806 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		34FB875A1B74BD150011FC14 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = "Flurry iPhone SDK viPhone 6.7.0/Flurry-iOS-6.7.0/Flurry/Flurry.h"; sourceTree = "<group>"; };
-		34FB875B1B74BD150011FC14 /* libFlurry_6.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_6.7.0.a; path = "Flurry iPhone SDK viPhone 6.7.0/Flurry-iOS-6.7.0/Flurry/libFlurry_6.7.0.a"; sourceTree = "<group>"; };
 		34FB875D1B74BE070011FC14 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		34FB875F1B74BE180011FC14 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -75,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C936CA1B78AF0A0004F806 /* libFlurry_6.7.0.a in Frameworks */,
 				34FB87601B74BE180011FC14 /* Security.framework in Frameworks */,
 				34FB875E1B74BE070011FC14 /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -167,21 +162,10 @@
 		34FA93EC1B74E539008E0F48 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
-				34FA93ED1B74E54F008E0F48 /* Flurry */,
 				34FB875D1B74BE070011FC14 /* SystemConfiguration.framework */,
 				34FB875F1B74BE180011FC14 /* Security.framework */,
 			);
 			name = FrameWorks;
-			sourceTree = "<group>";
-		};
-		34FA93ED1B74E54F008E0F48 /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				34C936C51B78ABF10004F806 /* libz.dylib */,
-				34FB875A1B74BD150011FC14 /* Flurry.h */,
-				34FB875B1B74BD150011FC14 /* libFlurry_6.7.0.a */,
-			);
-			name = Flurry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,15 +398,6 @@
 				INFOPLIST_FILE = HackerNewsFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Flurry",
-					iPhone,
-					SDK,
-					viPhone,
-					"6.7.0/Flurry-iOS-6.7.0/Flurry",
-					"$(PROJECT_DIR)/GoogleAnalyticsServicesiOS_3.13",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -434,15 +409,6 @@
 				INFOPLIST_FILE = HackerNewsFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Flurry",
-					iPhone,
-					SDK,
-					viPhone,
-					"6.7.0/Flurry-iOS-6.7.0/Flurry",
-					"$(PROJECT_DIR)/GoogleAnalyticsServicesiOS_3.13",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

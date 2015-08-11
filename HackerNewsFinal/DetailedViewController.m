@@ -7,7 +7,6 @@
 //
 
 #import "DetailedViewController.h"
-#import "Flurry.h"
 
 @interface DetailedViewController ()
 @property (strong, nonatomic)  UIWebView *myWebView;
@@ -37,12 +36,10 @@
     self.myWebView.scalesPageToFit = YES;
     [self.myWebView loadRequest:self.myRequest];
     self.myWebView.delegate = self;
-    [Flurry logEvent:@"Story Visited Average Time" timed:YES];
 
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
-    [Flurry endTimedEvent:@"Story Visited Average Time" withParameters:nil];
 }
 
 -(void) webViewDidStartLoad:(UIWebView *)webView{
