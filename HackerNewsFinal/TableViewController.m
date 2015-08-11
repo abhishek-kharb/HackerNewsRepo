@@ -11,6 +11,7 @@
 #import "StoryItem.h"
 #import "DetailedViewController.h"
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface TableViewController ()
 @property (strong, nonatomic) WebContentFetchController *webContentFetchController;
@@ -73,7 +74,7 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
 
 -(void) onRefreshButtonClick{
     
-    
+    [FBSDKAppEvents logEvent:@"Refresh Button Clicked"];
     self.allStoryTempData = nil;
     self.allStoryTempData = [[NSMutableArray alloc] initWithArray:self.allStoryData];
     self.allStoryData = nil;
@@ -102,6 +103,7 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
         
         if (indexPath.row == self.allStoryData.count-1) {
             
+            [FBSDKAppEvents logEvent:@"Over 20 Stories Scrolled"];
             [self.footerSpinner startAnimating];
             long count = self.allStoryData.count;
             self.allStoryTempData = nil;
@@ -119,6 +121,9 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [FBSDKAppEvents logEvent:@"Did Select A Story" parameters:@{
+                                                                @"Index" : [NSNumber numberWithInteger:indexPath.row]
+                                                                }];
     StoryItem *storyItem;
     storyItem = [self.allStoryData objectAtIndex:indexPath.row];
     self.detailedViewController.storyURL = storyItem.storyUrl;

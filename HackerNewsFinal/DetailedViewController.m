@@ -7,6 +7,7 @@
 //
 
 #import "DetailedViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface DetailedViewController ()
 @property (strong, nonatomic)  UIWebView *myWebView;

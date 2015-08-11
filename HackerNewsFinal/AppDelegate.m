@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TableViewController.h"
 #import <sys/utsname.h>
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #define kAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 
@@ -36,7 +36,7 @@
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     NSString *deviceName = [self platformType:platform];
     
-    
+    [FBSDKAppEvents activateApp];    
     return YES;
 }
 
