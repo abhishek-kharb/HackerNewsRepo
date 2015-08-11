@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TableViewController.h"
 #import <sys/utsname.h>
-
+#import "Parse/Parse.h"
 
 #define kAppVersion [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 
@@ -36,6 +36,10 @@
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     NSString *deviceName = [self platformType:platform];
     
+    
+    [Parse enableLocalDatastore];
+    [Parse setApplicationId:@"A0E3VazfGCBANxWRzZ4dX2e7Ph6mQFC0g8cYfLz7"
+                  clientKey:@"j39yVHlJnKf8W0SoUrQzRij0NMpJr4VED0AXlapK"];
     
     return YES;
 }

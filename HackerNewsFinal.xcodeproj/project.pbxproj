@@ -21,8 +21,6 @@
 		34A7DDF71B5F9587004C628C /* StoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A7DDF61B5F9587004C628C /* StoryItem.m */; };
 		34A7DDFB1B60CBA1004C628C /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A7DDF91B60CBA1004C628C /* DetailedViewController.m */; };
 		34A7DDFC1B60CBA1004C628C /* DetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A7DDFA1B60CBA1004C628C /* DetailedViewController.xib */; };
-		34FB875E1B74BE070011FC14 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB875D1B74BE070011FC14 /* SystemConfiguration.framework */; };
-		34FB87601B74BE180011FC14 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB875F1B74BE180011FC14 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +60,6 @@
 		34A7DDF81B60CBA1004C628C /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
 		34A7DDF91B60CBA1004C628C /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 		34A7DDFA1B60CBA1004C628C /* DetailedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedViewController.xib; sourceTree = "<group>"; };
-		34FB875D1B74BE070011FC14 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		34FB875F1B74BE180011FC14 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34FB87601B74BE180011FC14 /* Security.framework in Frameworks */,
-				34FB875E1B74BE070011FC14 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +156,6 @@
 		34FA93EC1B74E539008E0F48 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
-				34FB875D1B74BE070011FC14 /* SystemConfiguration.framework */,
-				34FB875F1B74BE180011FC14 /* Security.framework */,
 			);
 			name = FrameWorks;
 			sourceTree = "<group>";
@@ -395,6 +387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.7.5",
+				);
 				INFOPLIST_FILE = HackerNewsFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -406,6 +402,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.7.5",
+				);
 				INFOPLIST_FILE = HackerNewsFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
