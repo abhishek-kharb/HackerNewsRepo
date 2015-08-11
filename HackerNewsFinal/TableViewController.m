@@ -10,7 +10,6 @@
 #import "TableViewCell.h"
 #import "StoryItem.h"
 #import "DetailedViewController.h"
-#import "Flurry.h"
 #import "AppDelegate.h"
 
 @interface TableViewController ()
@@ -75,7 +74,6 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
 -(void) onRefreshButtonClick{
     
     
-    [Flurry logEvent:@"Refresh Button Pressed"];
     self.allStoryTempData = nil;
     self.allStoryTempData = [[NSMutableArray alloc] initWithArray:self.allStoryData];
     self.allStoryData = nil;
@@ -103,7 +101,6 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
         cell.storyCommentCount.text = [storyItem.storyCommentCount stringValue];
         
         if (indexPath.row == self.allStoryData.count-1) {
-            [Flurry logEvent:@"Scrolled Over 20 Stories"];
             
             [self.footerSpinner startAnimating];
             long count = self.allStoryData.count;
@@ -122,8 +119,6 @@ static NSString *myIdentifier = @"MySimpleIdentifier";
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [Flurry logEvent:@"Did Select A story" withParameters:@{
-                                                            @"Story Index" : [NSNumber numberWithInteger:indexPath.row]}];
     StoryItem *storyItem;
     storyItem = [self.allStoryData objectAtIndex:indexPath.row];
     self.detailedViewController.storyURL = storyItem.storyUrl;

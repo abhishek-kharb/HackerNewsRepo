@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "TableViewController.h"
-#import "Flurry.h"
 #import <sys/utsname.h>
 
 
@@ -37,13 +36,6 @@
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     NSString *deviceName = [self platformType:platform];
     
-    [Flurry setCrashReportingEnabled:NO];
-    [Flurry setShowErrorInLogEnabled:NO];
-    [Flurry setAppVersion:kAppVersion];
-    [Flurry sessionProperties:@{ @"Device OS"   : deviceOS,
-                                 @"Device Name" : deviceName
-                                }];
-    [Flurry startSession:@"DXN8RKV72RG9WZW88CRQ" withOptions:launchOptions];
     
     return YES;
 }
