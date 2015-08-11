@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AC9E955E-CEF6-4064-AA18-1F88F5187C6E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HackerNewsFinal</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E9AAC54C7C3C30D35BC796A5DA6AE99D414FBC00</key>
+		<string>https://github.com/abhisheknsit11/HackerNewsRepo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HackerNewsFinal.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E9AAC54C7C3C30D35BC796A5DA6AE99D414FBC00</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/abhisheknsit11/HackerNewsRepo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E9AAC54C7C3C30D35BC796A5DA6AE99D414FBC00</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9AAC54C7C3C30D35BC796A5DA6AE99D414FBC00</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HackerNewsFinal</string>
+		</dict>
+	</array>
+</dict>
+</plist>
